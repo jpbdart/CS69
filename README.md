@@ -25,4 +25,8 @@ Once booted, the image can be logged into with user: cs69user password: cs69user
 - angr
 - ghidra
 
-Additionally both gcc and clang compilers are available.
+Additionally developer tools like the *gcc* and *clang* compilers are available, as well as *git*.
+
+You can also *ssh* from your main system to the emulator by connecting to port 10022 on *localhost*; for example, `ssh -p 10022 cs69user@127.0.0.1 -p 10022`.
+
+### Running a VNC Session ###
