@@ -27,6 +27,15 @@ Once booted, the image can be logged into with user: cs69user password: cs69user
 
 Additionally developer tools like the *gcc* and *clang* compilers are available, as well as *git*.
 
-You can also *ssh* from your main system to the emulator by connecting to port 10022 on *localhost*; for example, `ssh -p 10022 cs69user@127.0.0.1 -p 10022`.
+You can also *ssh* from your main system to the emulator by connecting to port 10022 on *localhost*; for example, `ssh -p 10022 cs69user@127.0.0.1 -p 10022`, or to use *scp* to copy a file: `scp -P10022 my_crackme cs69user@localhost`.
 
 ### Running a VNC Session ###
+
+#### On the emulator ####
+1. The script to start the VNC server is in ~/bin/vnc\_start.sh. You may want to change the geometry, which is 2048x1532, which may be too large for some screens. The default VNC password is set to *cs69user* (I'm very original...)
+2. To stop the server, you can use the ~/bin/vnc\_stop.sh command.
+
+#### On the host system ####
+1. Make sure you have a VNC client installed.
+2. Run *vnctunnel.sh* to set up the SSH connection from the emulator VNC server to a port that the VNC client can use. In our case, we are connecting cs69user's VNC server at port 5901 to a localhost port of 59000.
+3. Start your VNC client and connect to localhost:590000.
